@@ -1,0 +1,27 @@
+{
+  "name": "battleships",
+  "version": "1.0.0",
+  "description": "A practice of JavaScript which consists of creating a toy application for the battleships game",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lhscar56/battleships"
+  },
+  "author": " Gastón Costa Gonzalez, Frederico Miranda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lhscar56/battleships/issues"
+  },
+  "homepage": "https://github.com/frederico-miranda/javascript-todo-list#readme",
+  "dependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-recommended": "^4.0.0"
+  }
+}
