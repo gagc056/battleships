@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/lhscar56/battleships/issues"
   },
-  "homepage": "https://github.com/frederico-miranda/javascript-todo-list#readme",
+  "homepage": "https://github.com/frederico-miranda/battleships#readme",
   "dependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
