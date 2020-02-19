@@ -8,11 +8,8 @@ describe('Ship factory function', () => {
     });
   });
 
-  test('should return the length property', () => {
-    expect(ship1).toHaveProperty('length');
-  });
 
-  test('should return the length property', () => {
+  test('should verify the length property', () => {
     expect(ship1.length).toBe(4);
   });
 });
