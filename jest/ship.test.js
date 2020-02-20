@@ -1,33 +1,40 @@
-
-const ship1 = ship(5, [6, 7, 8]);
-describe('Ship factory function', () => {
+import shipFactory from '../lib/ship';
+const length = 4;
+const ship = shipFactory(length);
+describe('shipFactory function', () => {
   test('should have correct properties', () => {
-    expect(ship1).toMatchObject({
+    expect(ship).toMatchObject({
       length: expect.any(Number),
       isSunk: expect.any(Function),
+      hit: expect.any(Function),
     });
   });
 
-
   test('should verify the length property', () => {
-    expect(ship1.length).toBe(4);
+    expect(ship.length).toBe(4);
   });
 });
 
-describe('Hit function', () =>{
-  test('should remove element if it is in the position array', () => {
-    expect(ship1.hit(6)).toBe(true);
-  });
+describe('hit and isSunk function', () =>{
 
   test('should return false if there is element in the position array', () => {
-    expect(ship1.isSunk()).toBe(false);
+    expect(ship.isSunk()).toBe(false);
+  });
+
+  test('should return true if a successful hit is done ', () => {
+    expect(ship.hit(0)).toBe(true);
   });
 
   test('should return false if not in the array', () => {
-    expect(ship1.hit(70)).toBe(false);
+    expect(ship.hit(4)).toBe(false);
   });
 
-  test('should return true if position array is empty', () => {
-    expect(ship1.isSunk()).toBe(true);
+  test('should sunk  if all positions have been hit ', () => {
+    ship.hit(0);
+    ship.hit(1);
+    ship.hit(2);
+    ship.hit(3);
+    expect(ship.isSunk()).toBe(true);
   });
+
 });
