@@ -29,7 +29,7 @@ describe('gameboardFactory', () => {
                }]
         );
         const ship2=shipFactory(4);
-        gameboard.placeShip();
+        gameboard.placeShip(ship2, 1, 4, 'VERTICAL');
         expect(gameboard.ships).toMatchObject([{
             row: shipRow,
             column: shipColumn,
@@ -61,14 +61,14 @@ describe('gameboardFactory', () => {
     test('allSunk',()=>{
         expect(gameboard.allSunk()).toBe(false);
         gameboard.receiveAttack(0,0);
-        gameboard.receiveAttack(1,0);
-        gameboard.receiveAttack(2,0);
-        gameboard.receiveAttack(3,0);
+        gameboard.receiveAttack(0,1);
+        gameboard.receiveAttack(0,2);
+        gameboard.receiveAttack(0,3);
         expect(gameboard.allSunk()).toBe(false);
         gameboard.receiveAttack(1,4);
-        gameboard.receiveAttack(1,5);
-        gameboard.receiveAttack(1,6);
-        gameboard.receiveAttack(1,7);
+        gameboard.receiveAttack(2,4);
+        gameboard.receiveAttack(3,4);
+        gameboard.receiveAttack(4,4);
         expect(gameboard.allSunk()).toBe(true);
     })
 
