@@ -10,6 +10,7 @@ describe('gameboardFactory', () => {
         ships:expect.any(Array),
         hits:expect.any(Array),
         misses:expect.any(Array),
+        statusAt:expect.any(Function),
       });
       expect(gameboard.ships).toMatchObject([])
     });
@@ -50,7 +51,7 @@ describe('gameboardFactory', () => {
 
         expect(gameboard.hits).toMatchObject([]);
         expect(gameboard.misses).toMatchObject([[9,9], [8,8]]);
-            
+
         gameboard.receiveAttack(0,0);
         gameboard.receiveAttack(1,4);
         expect(gameboard.hits).toMatchObject([[0,0], [1,4]]);
@@ -71,6 +72,18 @@ describe('gameboardFactory', () => {
         gameboard.receiveAttack(4,4);
         expect(gameboard.allSunk()).toBe(true);
     })
+
+    test('statusAt',()=>{
+        expect(gameboard.statusAt(9,9)).toBe('MISS');
+        expect(gameboard.statusAt(8,8)).toBe('MISS');
+        expect(gameboard.statusAt(5,5)).toBe(null);
+        expect(gameboard.statusAt(6,7)).toBe(null);
+        expect(gameboard.statusAt(4,1)).toBe(null);
+        expect(gameboard.statusAt(1,4)).toBe('HIT');
+        expect(gameboard.statusAt(0,0)).toBe('HIT');
+        expect(gameboard.statusAt(1,0)).toBe(null);
+
+    });
 
 
 })
