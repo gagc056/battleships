@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Battleships!</title>
+</head>
+
+<body>
+  <div id="phase-screens">
+    <div id="phase-screen-new-game">
+      <h2>New Game</h2>
+      <label>
+        <input type="radio" id="radio-play-human" name="radio-new-game"> Human VS. Human
+      </label>
+      <label>
+        <input type="radio" id="radio-play-computer" name="radio-new-game">Human VS. Computer
+      </label>
+      <button id="button-new-game">New Game</button>
+    </div>
+    <div id="phase-screen-placement">
+      <h2>Ship Placement</h2>
+      <div id="bar-placement-status"></div>
+      <canvas id="canvas-placement" width="500" height="500"></canvas><br/>
+      <label>
+        Row: <input type="number" min="0" max="9" id="number-ship-row" />
+      </label>
+      <label>
+        Column: <input type="number" min="0" max="9" id="number-ship-column">
+      </label>
+      <label>
+        Orientation:
+        <select id="select-ship-orientation">
+          <option value="HORIZONTAL">Horizontal</option>
+          <option value="VERTICAL">Vertical</option>
+        </select>
+      </label>
+      <button id="button-place-ship">Place Ship</button>
+      <button id="button-reset-gameboard">Reset Gameboard</button>
+      <button id="button-start-game">Start Game</button>
+      <div id="bar-placement-error"></div>
+    </div>
+    <div id="phase-screen-play-computer">
+      <h2>Human VS. Computer Battle!</h2>
+      <div id="status-play-computer"></div>
+      <div>
+        <canvas id="canvas-human-player"></canvas>
+      </div>
+      <div>
+        <canvas id="canvas-computer-player"></canvas>
+        <button id="button-launch-fire">Fire!</button>
+      </div>
+    </div>
+    <div id="phase-screen-play-human">
+      <h2>Human VS. Human Battle!</h2>
+      <div>Sorry, this has not been implemented yet.</div>
+      <button class="game-reset">Reset</button>
+    </div>
+  </div>
+  <div style="display: none;">
+    <img id="water-droplet" src="water-drop.svg" alt="A water droplet." />
+    <img id="explosion" src="explosion.svg" alt="An explosion." />
+    <img id="target-scope" src="target-scope.svg" alt="A target scope." />
+  </div>
+</body>
+
+</html>
