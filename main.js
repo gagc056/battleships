@@ -4,99 +4,99 @@ import placementStartFactory from './lib/phases/placement';
 import playComputerStartFactory from './lib/phases/play-computer';
 
 /* ICONS REQUIRED FOR BATTLE CANVAS */
-let waterDropletIcon = document.getElementById('water-droplet');
-let explosionIcon = document.getElementById('explosion');
-let targetScopeIcon = document.getElementById('target-scope');
+const waterDropletIcon = document.getElementById('water-droplet');
+const explosionIcon = document.getElementById('explosion');
+const targetScopeIcon = document.getElementById('target-scope');
 
-let icons = {
-  waterDropletIcon: waterDropletIcon,
-  explosionIcon: explosionIcon,
-  targetScopeIcon: targetScopeIcon,
+const icons = {
+  waterDropletIcon,
+  explosionIcon,
+  targetScopeIcon,
 };
 
 /* SCREENS FOR EACH PHASE OF THE GAME */
-let phaseScreenNewGame = document.getElementById('phase-screen-new-game');
-let phaseScreenPlacement = document.getElementById('phase-screen-placement');
-let phaseScreenPlayComputer = document.getElementById('phase-screen-play-computer');
+const phaseScreenNewGame = document.getElementById('phase-screen-new-game');
+const phaseScreenPlacement = document.getElementById('phase-screen-placement');
+const phaseScreenPlayComputer = document.getElementById('phase-screen-play-computer');
 
-let elements = {
+const elements = {
   newGame: phaseScreenNewGame,
   placement: phaseScreenPlacement,
   playComputer: phaseScreenPlayComputer,
 };
 
 /* BUTTONS AND FORM INPUTS FOR NEW_GAME PHASE */
-let buttonNewGame = document.getElementById('button-new-game');
+const buttonNewGame = document.getElementById('button-new-game');
 
-let newGameButtons = {
+const newGameButtons = {
   newGame: buttonNewGame,
 };
 
-let stringPlayerName = document.getElementById('string-player-name');
-let colorPlayerColor = document.getElementById('color-player-color');
+const stringPlayerName = document.getElementById('string-player-name');
+const colorPlayerColor = document.getElementById('color-player-color');
 
-let newGameForm = {
+const newGameForm = {
   playerName: stringPlayerName,
   playerColor: colorPlayerColor,
 };
 
-const newGameStart = newGameStartFactory(newGameButtons, newGameForm)
+const newGameStart = newGameStartFactory(newGameButtons, newGameForm);
 
 /* BUTTONS, BARS, FORM INPUTS AND CANVAS FOR PLACEMENT PHASE */
-let buttonPlaceShip = document.getElementById('button-place-ship');
-let buttonStartGame = document.getElementById('button-start-game');
-let buttonResetGameboard = document.getElementById('button-reset-gameboard');
+const buttonPlaceShip = document.getElementById('button-place-ship');
+const buttonStartGame = document.getElementById('button-start-game');
+const buttonResetGameboard = document.getElementById('button-reset-gameboard');
 
-let placementButtons = {
+const placementButtons = {
   placeShip: buttonPlaceShip,
   startGame: buttonStartGame,
   resetGameboard: buttonResetGameboard,
 };
 
-let barPlacementStatus = document.getElementById('bar-placement-status');
-let barPlacementError = document.getElementById('bar-placement-error');
+const barPlacementStatus = document.getElementById('bar-placement-status');
+const barPlacementError = document.getElementById('bar-placement-error');
 
-let placementBars = {
+const placementBars = {
   status: barPlacementStatus,
   error: barPlacementError,
 };
 
-let numberShipRow = document.getElementById('number-ship-row');
-let numberShipColumn = document.getElementById('number-ship-column');
-let selectShipOrientation = document.getElementById('select-ship-orientation');
+const numberShipRow = document.getElementById('number-ship-row');
+const numberShipColumn = document.getElementById('number-ship-column');
+const selectShipOrientation = document.getElementById('select-ship-orientation');
 
-let placementForm = {
+const placementForm = {
   shipRow: numberShipRow,
   shipColumn: numberShipColumn,
   shipOrientation: selectShipOrientation,
 };
 
-let canvasPlacement = document.getElementById('canvas-placement');
+const canvasPlacement = document.getElementById('canvas-placement');
 
 const placementStart = placementStartFactory(
-    placementButtons,
-    placementBars,
-    placementForm,
-    canvasPlacement,
-    icons,
-    'PLAY_COMPUTER',
+  placementButtons,
+  placementBars,
+  placementForm,
+  canvasPlacement,
+  icons,
+  'PLAY_COMPUTER',
 );
 
 /* BUTTONS, BARS AND CANVASES FOR PLAY_COMPUTER PHASE */
-let buttonLaunchFire = document.getElementById('button-launch-fire');
+const buttonLaunchFire = document.getElementById('button-launch-fire');
 
 const playComputerButtons = {
   fireMissile: buttonLaunchFire,
 };
 
-let statusPlayComputer = document.getElementById('status-play-computer');
+const statusPlayComputer = document.getElementById('status-play-computer');
 
 const playComputerBars = {
   status: statusPlayComputer,
 };
 
-let canvasHumanPlayer = document.getElementById('canvas-human-player');
-let canvasComputerPlayer = document.getElementById('canvas-computer-player');
+const canvasHumanPlayer = document.getElementById('canvas-human-player');
+const canvasComputerPlayer = document.getElementById('canvas-computer-player');
 
 const playComputerCanvases = {
   humanCanvas: canvasHumanPlayer,
@@ -110,12 +110,11 @@ const playComputerStart = playComputerStartFactory(
   icons,
 );
 
-let starts = {
+const starts = {
   newGame: newGameStart,
   placement: placementStart,
   playComputer: playComputerStart,
 };
 
 const gameLoop = setupGameLoop(elements, starts);
-document.gameLoop = gameLoop;
 gameLoop.setPhase('NEW_GAME');

@@ -1,4 +1,5 @@
 import shipFactory from '../lib/ship';
+
 const length = 4;
 const ship = shipFactory(length);
 describe('shipFactory function', () => {
@@ -15,8 +16,7 @@ describe('shipFactory function', () => {
   });
 });
 
-describe('hit and isSunk function', () =>{
-
+describe('hit and isSunk function', () => {
   test('should return false if there is element in the position array', () => {
     expect(ship.isSunk()).toBe(false);
   });
@@ -36,5 +36,4 @@ describe('hit and isSunk function', () =>{
     ship.hit(3);
     expect(ship.isSunk()).toBe(true);
   });
-
 });
