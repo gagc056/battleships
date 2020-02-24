@@ -8,7 +8,7 @@ const ship4=shipFactory(4);
 const gameboard1=gameboardFactory();
 const gameboard2=gameboardFactory();
 gameboard1.placeShip(ship1, 0, 0, 'HORIZONTAL');
-gameboard1.placeShip(ship2, 1, 0, 'VERTICAL');
+gameboard1.placeShip(ship2, 1, 4, 'VERTICAL');
 gameboard2.placeShip(ship3, 4, 4, 'HORIZONTAL');
 gameboard2.placeShip(ship4, 5, 4, 'VERTICAL');
 const player1 = playerFactory('Gaston', 'red');
