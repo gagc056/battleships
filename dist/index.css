@@ -3,6 +3,8 @@
   src: url("capture-it.ttf") format("truetype");
 }
 
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 body {
   font-family: "Capture It";
   font-size: 24px;
@@ -41,6 +43,8 @@ h2 {
   top: 90vh;
   left: 0;
   overflow: scroll;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 
 #phase-screens > div {
