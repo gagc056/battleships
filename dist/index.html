@@ -11,10 +11,18 @@
 <body>
   <div id="phase-screens">
     <div id="phase-screen-new-game">
-      <h2>Battleships!</h2>
+      <h2>Battleships</h2>
       <p>
       "Battleships!" is a game played by two players taking turns. On a player's turn, the player must select a target in the enemy field and fire. If it has hit something, an explosion icon will be displayed at the point. If it has not hit anything, a water droplet icon will be displayed at the point. The player that survives, by having at least one boat still not sunk, wins the game.
       </p>
+      <div id="new-game-player-input">
+        <label>
+          Name: <input type="text" required id="string-player-name" />
+        </label>
+        <label>
+          Color: <input type="color" required id="color-player-color" />
+        </label>
+      </div>
       <button id="button-new-game">New Game</button>
     </div>
     <div id="phase-screen-placement">
