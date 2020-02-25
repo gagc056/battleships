@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "Capture It";
+  src: url("capture-it.ttf") format("truetype");
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+body {
+  font-family: "Capture It";
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.status-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#phase-screens {
+  position: fixed;
+  width: 100vw;
+  height: 90vh;
+  top: 0;
+  left: 0;
+}
+
+#attributions {
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  top: 90vh;
+  left: 0;
+  overflow: scroll;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+#phase-screens > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#phase-screen-placement {
+  display: grid;
+  grid-template-rows: 71px 28px 28px 90px 1fr;
+  grid-template-columns: 1fr 300px;
+}
+
+#phase-screen-placement > h2 {
+  grid-area: 1/1/2/3;
+  text-align: center;
+}
+
+#phase-screen-placement > #bar-placement-status {
+  grid-area: 2/1/3/3;
+}
+
+#phase-screen-placement > #bar-placement-error {
+  grid-area: 3/1/4/3;
+}
+
+#phase-screen-placement > #canvas-placement {
+  grid-area: 4/1/6/3;
+}
+
+#phase-screen-placement > #placement-inputs {
+  grid-area: 4/2/5/3;
+}
+
+#phase-screen-placement > #placement-buttons {
+  grid-area: 5/2/6/3;
+  height: calc(90vh - 217px);
+}
+
+#canvas-placement {
+  width: calc(100vw - 300px);
+  height: calc(90vh - 127px);
+}
+
+#placement-inputs {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#placement-inputs > label {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+#placement-buttons {
+  display:  flex;
+  flex-flow: column nowrap;
+}
+
+#placement-buttons > * {
+  flex: 1 0 0;
+}
+
+
+#phase-screen-play-computer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 71px 28px 1fr;
+}
+
+#phase-screen-play-computer > h2 {
+  grid-area: 1/1/2/3;
+  text-align: center;
+}
+
+#phase-screen-play-computer > #status-play-computer {
+  grid-area: 2/1/3/3;
+  text-align: center;
+}
+
+#phase-screen-play-computer > #human-player-board {
+  grid-area: 3/1/4/2;
+}
+
+#phase-screen-play-computer > #computer-player-board {
+  grid-area: 3/2/4/3;
+}
+
+#phase-screen-play-computer canvas {
+  width: 50vw;
+  height: calc(90vh - 130px);
+}

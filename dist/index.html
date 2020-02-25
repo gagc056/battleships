@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Battleships!</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <div id="phase-screens">
+    <div id="phase-screen-new-game">
+      <h2>Battleships</h2>
+      <p>
+      "Battleships!" is a game played by two players taking turns. On a player's turn, the player must select a target in the enemy field and fire. If it has hit something, an explosion icon will be displayed at the point. If it has not hit anything, a water droplet icon will be displayed at the point. The player that survives, by having at least one boat still not sunk, wins the game.
+      </p>
+      <div id="new-game-player-input">
+        <label>
+          Name: <input type="text" required id="string-player-name" />
+        </label>
+        <label>
+          Color: <input type="color" required id="color-player-color" />
+        </label>
+      </div>
+      <button id="button-new-game">New Game</button>
+    </div>
+    <div id="phase-screen-placement">
+      <h2>Ship Placement</h2>
+      <div class="status-bar" id="bar-placement-status"></div>
+      <canvas id="canvas-placement"></canvas>
+      <div id="placement-inputs">
+        <label>
+          Row: <input type="number" min="0" max="9" id="number-ship-row" />
+        </label>
+        <label>
+          Column: <input type="number" min="0" max="9" id="number-ship-column">
+        </label>
+        <label>
+          Orientation:
+          <select id="select-ship-orientation">
+            <option value="HORIZONTAL">Horizontal</option>
+            <option value="VERTICAL">Vertical</option>
+          </select>
+        </label>
+      </div>
+      <div id="placement-buttons">
+        <button id="button-place-ship">Place Ship</button>
+        <button id="button-reset-gameboard">Reset Gameboard</button>
+        <button id="button-start-game">Start Game</button>
+      </div>
+      <div class="status-bar" id="bar-placement-error"></div>
+    </div>
+    <div id="phase-screen-play-computer">
+      <h2>Human VS. Computer</h2>
+      <div id="status-play-computer"></div>
+      <div id="human-player-board">
+        <canvas id="canvas-human-player"></canvas>
+      </div>
+      <div id="computer-player-board">
+        <canvas id="canvas-computer-player"></canvas>
+        <button id="button-launch-fire">Fire!</button>
+      </div>
+    </div>
+  </div>
+  <div id="attributions">
+    <small><b>ATTRIBUTIONS:</b> "Water Droplet" icon made by <a href="https://www.flaticon.com/authors/smalllikeart" title="smalllikeart">smalllikeart</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>. "Target Scope" and "Explosion" icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>. "Capture It" font by <a href="https://www.facebook.com/Magique-Fonts-110683665690882/">Magique Fonts</a>, also known as <a href="https://www.facebook.com/typesgal/">Typesgal</a>, from <a href="https://www.fonts4free.net/capture-it-font.html">fonts4free.net</a>.</small>
+  </div>
+
+  <div style="display: none;">
+    <img id="water-droplet" src="water-drop.svg" alt="A water droplet." />
+    <img id="explosion" src="explosion.svg" alt="An explosion." />
+    <img id="target-scope" src="target-scope.svg" alt="A target scope." />
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
